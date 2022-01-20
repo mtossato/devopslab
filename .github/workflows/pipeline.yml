@@ -3,7 +3,7 @@ name: DevOpsLab Pipeline
 
 # Evento que irá acionar a pipeline
 on: 
-  push:
+  push: 
     branches:
       - main
 
