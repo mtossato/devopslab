@@ -58,7 +58,7 @@ jobs:
         run: heroku container:login
 
       - name: Docker Image & Push Heroku Registry
-        env:
+        env: 
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         run: heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web
 
@@ -67,7 +67,7 @@ jobs:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
         run: | 
           echo '${{ secrets.GOOGLE_CREDENTIALS }}' > key.json
-          cat key.json | docker login -u _json_key --password-stdin https://us-west1-docker.pkg.dev/
+          cat key.json | docker login -u _json_key --password-stdin https://us-central1-docker.pkg.dev/
 
       - name: Build Image & Push 
         env: 
